@@ -48,6 +48,8 @@ tasks.withType<Test>() {
     minHeapSize = "128m"
     maxHeapSize = "256m"
     maxParallelForks = 1
+
+    jvmArgs = (jvmArgs ?: listOf()) + listOf("-XX:+HeapDumpOnOutOfMemoryError")
 }
 
 dependencies {
